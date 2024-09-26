@@ -142,38 +142,12 @@
                   "score": "38"
                 },
                 {
-                  "id": "aadeed5c-2a97-44e8-8aac-857c8e00d73f",
-                  "title": "XSS (межсайтовый скриптинг)",
-                  "status": "Mitigated",
-                  "severity": "Medium",
-                  "type": "Information disclosure",
-                  "description": "Атака, при которой вредоносный код (обычно JavaScript) внедряется на страницы веб-приложения, и когда пользователи посещают эти страницы, их браузеры выполняют этот код, что может привести к краже сессий или данных пользователей.",
-                  "mitigation": "Экранируйте выходные данные на стороне сервера и клиента, чтобы предотвратить выполнение произвольного JavaScript кода. Используйте Content Security Policy (CSP), чтобы ограничить источники, из которых разрешено загружать скрипты, тем самым защищая пользователей от выполнения вредоносного кода. Проводите регулярные проверки и тестирование на уязвимости XSS, чтобы выявлять и устранять потенциальные проблемы.\n\nD (Damage): 7\nR (Reproducibility): 8\nE (Exploitability): 7\nA (Affected Users): 6\nD (Discoverability): 6",
-                  "modelType": "STRIDE",
-                  "new": false,
-                  "number": 3,
-                  "score": "34"
-                },
-                {
-                  "id": "a8e035ad-dfd7-431d-b3c7-fbbef7e09809",
-                  "title": "DDoS атака",
-                  "status": "Open",
-                  "severity": "High",
-                  "type": "Denial of service",
-                  "description": "Атака, при которой злоумышленники направляют большой объем трафика на веб-сервер с целью его перегрузки и недоступности для законных пользователей. Это может привести к временной или постоянной недоступности сервиса.",
-                  "mitigation": "Используйте сети доставки контента (CDN) для распределения нагрузки на сервер и повышения устойчивости к DDoS-атакам, что позволит снизить нагрузку на основной сервер. Настройте системы мониторинга и предупреждений для быстрого обнаружения аномальных объемов трафика и реагирования на него. Реализуйте фильтрацию трафика на уровне сервера, чтобы блокировать подозрительные IP-адреса и минимизировать влияние атак.\n\nD (Damage): 8\nR (Reproducibility): 9\nE (Exploitability): 7\nA (Affected Users): 9\nD (Discoverability): 9\n",
-                  "modelType": "STRIDE",
-                  "new": false,
-                  "number": 4,
-                  "score": "42"
-                },
-                {
                   "id": "25e21c11-893b-401f-a7a7-a4afe5af98a3",
                   "title": "CSRF (Cross-Site Request Forgery)",
                   "status": "Open",
                   "severity": "High",
                   "type": "Repudiation",
-                  "description": " Cross-Site Request Forgery (CSRF) — это атака, при которой злоумышленник заставляет пользователя, находящегося в аутентифицированном состоянии на сайте, выполнить нежелательное действие без его ведома. Обычно это происходит, когда жертва посещает вредоносный сайт, который отправляет запрос на сайт, где она уже аутентифицирована, используя ее сессию.",
+                  "description": "Cross-Site Request Forgery (CSRF) — это атака, при которой злоумышленник заставляет пользователя, находящегося в аутентифицированном состоянии на сайте, выполнить нежелательное действие без его ведома. Обычно это происходит, когда жертва посещает вредоносный сайт, который отправляет запрос на сайт, где она уже аутентифицирована, используя ее сессию.",
                   "mitigation": "Используйте уникальные CSRF-токены для всех форм и критических запросов, чтобы предотвратить подмену запросов. Также проверяйте заголовок Referer и ограничивайте методы HTTP (например, используйте только POST) для важных действий, чтобы повысить безопасность приложения.\n\nD (Damage): 8\nR (Reproducibility): 7\nE (Exploitability): 8\nA (Affected Users): 9\nD (Discoverability): 6\n",
                   "modelType": "STRIDE",
                   "new": false,
@@ -184,8 +158,8 @@
               "threatFrequency": {
                 "spoofing": 5,
                 "tampering": 3,
-                "repudiation": 1,
-                "informationDisclosure": 2,
+                "repudiation": 2,
+                "informationDisclosure": 1,
                 "denialOfService": 1,
                 "elevationOfPrivilege": 0
               }
@@ -418,11 +392,13 @@
                 "text": "WebServer"
               },
               "topLine": {
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               },
               "bottomLine": {
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -436,13 +412,46 @@
               "description": "Веб-сервер",
               "outOfScope": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "isALog": false,
               "isEncrypted": false,
               "isSigned": false,
               "storesCredentials": false,
               "storesInventory": false,
-              "threats": []
+              "threats": [
+                {
+                  "id": "525babff-7240-48b8-bf5e-35af575ed464",
+                  "title": "XSS (межсайтовый скриптинг)",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Information disclosure",
+                  "description": "Атака, при которой вредоносный код (обычно JavaScript) внедряется на страницы веб-приложения, и когда пользователи посещают эти страницы, их браузеры выполняют этот код, что может привести к краже сессий или данных пользователей.",
+                  "mitigation": "Экранируйте выходные данные на стороне сервера и клиента, чтобы предотвратить выполнение произвольного JavaScript кода. Используйте Content Security Policy (CSP), чтобы ограничить источники, из которых разрешено загружать скрипты, тем самым защищая пользователей от выполнения вредоносного кода. Проводите регулярные проверки и тестирование на уязвимости XSS, чтобы выявлять и устранять потенциальные проблемы.\n\nD (Damage): 7\nR (Reproducibility): 8\nE (Exploitability): 7\nA (Affected Users): 6\nD (Discoverability): 6\n",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 6,
+                  "score": "34"
+                },
+                {
+                  "id": "b16fd890-0625-4ef2-bfe4-697b3ebf4f40",
+                  "title": "DDoS атака",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Denial of service",
+                  "description": "Атака, при которой злоумышленники направляют большой объем трафика на веб-сервер с целью его перегрузки и недоступности для законных пользователей. Это может привести к временной или постоянной недоступности сервиса.",
+                  "mitigation": "Используйте сети доставки контента (CDN) для распределения нагрузки на сервер и повышения устойчивости к DDoS-атакам, что позволит снизить нагрузку на основной сервер. Настройте системы мониторинга и предупреждений для быстрого обнаружения аномальных объемов трафика и реагирования на него. Реализуйте фильтрацию трафика на уровне сервера, чтобы блокировать подозрительные IP-адреса и минимизировать влияние атак.\n\nD (Damage): 8\nR (Reproducibility): 9\nE (Exploitability): 7\nA (Affected Users): 9\nD (Discoverability): 9\n",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 8,
+                  "score": "42"
+                }
+              ],
+              "threatFrequency": {
+                "tampering": 2,
+                "repudiation": 0,
+                "informationDisclosure": 5,
+                "denialOfService": 1
+              }
             }
           }
         ],
@@ -451,6 +460,6 @@
     ],
     "diagramTop": 1,
     "reviewer": "My user",
-    "threatTop": 5
+    "threatTop": 8
   }
 }
