@@ -331,7 +331,7 @@
             "data": {
               "type": "tm.Flow",
               "name": "Data Flow",
-              "description": "",
+              "description": "Поток данных от Базы данных до злоумышленника",
               "outOfScope": false,
               "reasonOutOfScope": "",
               "hasOpenThreats": false,
@@ -341,22 +341,17 @@
               "protocol": "",
               "threats": []
             },
-            "id": "93262dd1-a7aa-4cdf-a759-b0de2b5d74ef",
+            "id": "ca736ac8-c546-4885-9470-584c60e7b4fb",
             "source": {
-              "x": 1018,
-              "y": 271
+              "cell": "a0569504-603c-4c53-a283-9e876e89f7a4"
             },
             "target": {
-              "cell": "a0569504-603c-4c53-a283-9e876e89f7a4"
+              "cell": "3a792e4f-1b66-44bc-a572-0fc3e08c92ff"
             },
             "vertices": [
               {
-                "x": 790,
-                "y": 70
-              },
-              {
-                "x": 560,
-                "y": -30
+                "x": 330,
+                "y": 270
               }
             ]
           },
@@ -381,7 +376,7 @@
             "data": {
               "type": "tm.Flow",
               "name": "Data Flow",
-              "description": "Поток данных от Базы данных до злоумышленника",
+              "description": "",
               "outOfScope": false,
               "reasonOutOfScope": "",
               "hasOpenThreats": false,
@@ -391,17 +386,21 @@
               "protocol": "",
               "threats": []
             },
-            "id": "ca736ac8-c546-4885-9470-584c60e7b4fb",
+            "id": "93262dd1-a7aa-4cdf-a759-b0de2b5d74ef",
             "source": {
-              "cell": "a0569504-603c-4c53-a283-9e876e89f7a4"
+              "cell": "01ee8021-96df-42a3-b4b9-1d4dbe0bb3fe"
             },
             "target": {
-              "cell": "3a792e4f-1b66-44bc-a572-0fc3e08c92ff"
+              "cell": "a0569504-603c-4c53-a283-9e876e89f7a4"
             },
             "vertices": [
               {
-                "x": 330,
-                "y": 270
+                "x": 790,
+                "y": 70
+              },
+              {
+                "x": 560,
+                "y": -30
               }
             ]
           },
