@@ -20,12 +20,427 @@
         "placeholder": "New STRIDE diagram description",
         "thumbnail": "./public/content/images/thumbnail.stride.jpg",
         "version": "2.2.0",
-        "cells": [],
+        "cells": [
+          {
+            "position": {
+              "x": 401,
+              "y": 150
+            },
+            "size": {
+              "width": 650,
+              "height": 240
+            },
+            "shape": "trust-boundary-box",
+            "attrs": {
+              "headerText": {
+                "text": ""
+              }
+            },
+            "zIndex": -1,
+            "id": "07f3184d-359f-435d-b358-6a0e838fefa1",
+            "data": {
+              "type": "tm.BoundaryBox",
+              "name": "",
+              "description": "",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false
+            }
+          },
+          {
+            "position": {
+              "x": 40,
+              "y": 240
+            },
+            "size": {
+              "width": 112.5,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "Attacer"
+              },
+              "body": {
+                "stroke": "#333333",
+                "strokeWidth": 1.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "actor",
+            "zIndex": 1,
+            "id": "a0569504-603c-4c53-a283-9e876e89f7a4",
+            "data": {
+              "type": "tm.Actor",
+              "name": "Attacer",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "providesAuthentication": false,
+              "threats": []
+            }
+          },
+          {
+            "position": {
+              "x": 390,
+              "y": 200
+            },
+            "size": {
+              "width": 240,
+              "height": 120
+            },
+            "attrs": {
+              "text": {
+                "text": "Authentication "
+              },
+              "body": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "process",
+            "zIndex": 2,
+            "id": "3a792e4f-1b66-44bc-a572-0fc3e08c92ff",
+            "data": {
+              "type": "tm.Process",
+              "name": "Authentication ",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "handlesCardPayment": false,
+              "handlesGoodsOrServices": false,
+              "isWebApplication": false,
+              "privilegeLevel": "",
+              "threats": [
+                {
+                  "id": "94dedff9-aa15-429f-924e-e7029196d68e",
+                  "title": "Угроза SQL- инъекции",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": " Проверку полученных входных данных, это должно быть выполнено в приложении. Следует рассмотреть, как приложение взаимодействует с базой данных. \n    Использование хранимых процедур, в отличие от специального SQL. Убедиться, что хранимая процедура проверяет значения, переданные ее параметрам.    ",
+                  "mitigation": "Используйте параметризованные запросы и ORM (Object-Relational Mapping), чтобы защитить ваши базы данных от внедрения вредоносного SQL-кода. Это предотвращает выполнение произвольных запросов и защищает от атак, так как все параметры вводятся отдельно от самого SQL-кода. Также важно регулярно проводить аудит кода для выявления уязвимостей и использовать минимальные права доступа для учетной записи базы данных.\nD (Damage): 9\nR (Reproducibility): 8\nE (Exploitability): 7\nA (Affected Users): 9\nD (Discoverability): 6\n",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 1,
+                  "score": "39"
+                },
+                {
+                  "id": "758ca707-1d83-4269-ab35-62bbe3431cd2",
+                  "title": " Кража учетных данных с помощью фишинга",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Spoofing",
+                  "description": "Атака с использованием фишинговых писем или поддельных веб-страниц, которые маскируются под реальные сервисы, чтобы заставить пользователей предоставить свои учетные данные (логины и пароли), что позволяет злоумышленникам войти в систему от имени пользователя.",
+                  "mitigation": "Внедрите двухфакторную аутентификацию (2FA), чтобы повысить безопасность учетных записей, требуя второй фактор подтверждения при входе. Проводите регулярные тренинги по кибербезопасности для сотрудников, чтобы они могли распознавать фишинговые атаки, такие как подозрительные ссылки и электронные письма. Используйте решения для фильтрации и маркировки фишинговых сообщений, чтобы минимизировать риск их открытия.\n\nD (Damage): 8\nR (Reproducibility): 9\nE (Exploitability): 9\nA (Affected Users): 7\nD (Discoverability): 5\n",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 2,
+                  "score": "38"
+                },
+                {
+                  "id": "aadeed5c-2a97-44e8-8aac-857c8e00d73f",
+                  "title": "XSS (межсайтовый скриптинг)",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Information disclosure",
+                  "description": "Атака, при которой вредоносный код (обычно JavaScript) внедряется на страницы веб-приложения, и когда пользователи посещают эти страницы, их браузеры выполняют этот код, что может привести к краже сессий или данных пользователей.",
+                  "mitigation": "Экранируйте выходные данные на стороне сервера и клиента, чтобы предотвратить выполнение произвольного JavaScript кода. Используйте Content Security Policy (CSP), чтобы ограничить источники, из которых разрешено загружать скрипты, тем самым защищая пользователей от выполнения вредоносного кода. Проводите регулярные проверки и тестирование на уязвимости XSS, чтобы выявлять и устранять потенциальные проблемы.\n\nD (Damage): 7\nR (Reproducibility): 8\nE (Exploitability): 7\nA (Affected Users): 6\nD (Discoverability): 6",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 3,
+                  "score": "34"
+                },
+                {
+                  "id": "a8e035ad-dfd7-431d-b3c7-fbbef7e09809",
+                  "title": "DDoS атака",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Denial of service",
+                  "description": "Атака, при которой злоумышленники направляют большой объем трафика на веб-сервер с целью его перегрузки и недоступности для законных пользователей. Это может привести к временной или постоянной недоступности сервиса.",
+                  "mitigation": "Используйте сети доставки контента (CDN) для распределения нагрузки на сервер и повышения устойчивости к DDoS-атакам, что позволит снизить нагрузку на основной сервер. Настройте системы мониторинга и предупреждений для быстрого обнаружения аномальных объемов трафика и реагирования на него. Реализуйте фильтрацию трафика на уровне сервера, чтобы блокировать подозрительные IP-адреса и минимизировать влияние атак.\n\nD (Damage): 8\nR (Reproducibility): 9\nE (Exploitability): 7\nA (Affected Users): 9\nD (Discoverability): 9\n",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 4,
+                  "score": "42"
+                },
+                {
+                  "id": "25e21c11-893b-401f-a7a7-a4afe5af98a3",
+                  "title": "CSRF (Cross-Site Request Forgery)",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Repudiation",
+                  "description": " Cross-Site Request Forgery (CSRF) — это атака, при которой злоумышленник заставляет пользователя, находящегося в аутентифицированном состоянии на сайте, выполнить нежелательное действие без его ведома. Обычно это происходит, когда жертва посещает вредоносный сайт, который отправляет запрос на сайт, где она уже аутентифицирована, используя ее сессию.",
+                  "mitigation": "Используйте уникальные CSRF-токены для всех форм и критических запросов, чтобы предотвратить подмену запросов. Также проверяйте заголовок Referer и ограничивайте методы HTTP (например, используйте только POST) для важных действий, чтобы повысить безопасность приложения.\n\nD (Damage): 8\nR (Reproducibility): 7\nE (Exploitability): 8\nA (Affected Users): 9\nD (Discoverability): 6\n",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 5,
+                  "score": "38"
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 5,
+                "tampering": 2,
+                "repudiation": 1,
+                "informationDisclosure": 2,
+                "denialOfService": 1,
+                "elevationOfPrivilege": 0
+              }
+            }
+          },
+          {
+            "position": {
+              "x": 898,
+              "y": 240
+            },
+            "size": {
+              "width": 120,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "Base"
+              },
+              "topLine": {
+                "strokeWidth": 1.5,
+                "strokeDasharray": null
+              },
+              "bottomLine": {
+                "strokeWidth": 1.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "store",
+            "zIndex": 3,
+            "id": "01ee8021-96df-42a3-b4b9-1d4dbe0bb3fe",
+            "data": {
+              "type": "tm.Store",
+              "name": "Base",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isALog": false,
+              "isEncrypted": false,
+              "isSigned": false,
+              "storesCredentials": false,
+              "storesInventory": false,
+              "threats": []
+            }
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Data Flow",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": []
+            },
+            "id": "ca736ac8-c546-4885-9470-584c60e7b4fb",
+            "source": {
+              "cell": "a0569504-603c-4c53-a283-9e876e89f7a4"
+            },
+            "target": {
+              "cell": "3a792e4f-1b66-44bc-a572-0fc3e08c92ff"
+            }
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Data Flow",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": []
+            },
+            "id": "969cf379-78b7-480c-b644-bb0a93bde7c0",
+            "source": {
+              "cell": "3a792e4f-1b66-44bc-a572-0fc3e08c92ff"
+            },
+            "target": {
+              "cell": "ed427ca8-244b-48d2-9bc2-62389cb2b72c"
+            }
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Data Flow",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": []
+            },
+            "id": "b78b7025-5eb8-42b4-aa0b-32fcb08b9f94",
+            "source": {
+              "cell": "ed427ca8-244b-48d2-9bc2-62389cb2b72c"
+            },
+            "target": {
+              "cell": "01ee8021-96df-42a3-b4b9-1d4dbe0bb3fe"
+            }
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Data Flow",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": []
+            },
+            "id": "cc2c4165-d86c-41b6-a0fc-af21397ff6f1",
+            "source": {
+              "cell": "01ee8021-96df-42a3-b4b9-1d4dbe0bb3fe"
+            },
+            "target": {
+              "cell": "a0569504-603c-4c53-a283-9e876e89f7a4"
+            },
+            "vertices": [
+              {
+                "x": 510,
+                "y": 60
+              }
+            ]
+          },
+          {
+            "position": {
+              "x": 680,
+              "y": 240
+            },
+            "size": {
+              "width": 120,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "WebServer"
+              },
+              "topLine": {
+                "strokeWidth": 1.5,
+                "strokeDasharray": null
+              },
+              "bottomLine": {
+                "strokeWidth": 1.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "store",
+            "zIndex": 11,
+            "id": "ed427ca8-244b-48d2-9bc2-62389cb2b72c",
+            "data": {
+              "type": "tm.Store",
+              "name": "WebServer",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isALog": false,
+              "isEncrypted": false,
+              "isSigned": false,
+              "storesCredentials": false,
+              "storesInventory": false,
+              "threats": []
+            }
+          }
+        ],
         "description": "SQL injection is a web security vulnerability that allows an attacker to interfere with queries that an application makes to a database."
       }
     ],
     "diagramTop": 1,
     "reviewer": "My user",
-    "threatTop": 0
+    "threatTop": 5
   }
 }
