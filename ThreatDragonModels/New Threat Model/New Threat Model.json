@@ -15,7 +15,7 @@
     "diagrams": [
       {
         "id": 0,
-        "title": "SQL injection",
+        "title": "Веб-приложение",
         "diagramType": "STRIDE",
         "placeholder": "New STRIDE diagram description",
         "thumbnail": "./public/content/images/thumbnail.stride.jpg",
@@ -447,7 +447,7 @@
             }
           }
         ],
-        "description": "SQL injection is a web security vulnerability that allows an attacker to interfere with queries that an application makes to a database."
+        "description": "Веб приложение с уязвимостями для распространенных атак"
       }
     ],
     "diagramTop": 1,
