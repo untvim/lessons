@@ -3,13 +3,24 @@
   "summary": {
     "title": "New Threat Model",
     "owner": "My user",
-    "description": "",
+    "description": "Attacks on the Web Application. A free project created and regulated by eLearnSecurity. It is possible to develop and add your own tasks. The tasks are broken down by specific vulnerabilities, mainly for beginners. Online service.",
     "id": 0
   },
   "detail": {
     "contributors": [],
-    "diagrams": [],
-    "diagramTop": 0,
+    "diagrams": [
+      {
+        "id": 0,
+        "title": "SQL injection",
+        "diagramType": "STRIDE",
+        "placeholder": "New STRIDE diagram description",
+        "thumbnail": "./public/content/images/thumbnail.stride.jpg",
+        "version": "2.2.0",
+        "cells": [],
+        "description": "SQL injection is a web security vulnerability that allows an attacker to interfere with queries that an application makes to a database."
+      }
+    ],
+    "diagramTop": 1,
     "reviewer": "My user",
     "threatTop": 0
   }
